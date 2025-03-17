@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Too Good To Go - README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción del Proyecto
+Too Good To Go es una aplicación web desarrollada en React.js que permite a los usuarios comprar comida sobrante de restaurantes a un precio reducido. La aplicación cuenta con funciones de autenticación, navegación, filtrado de productos y gestión de carrito de compras.
 
-## Available Scripts
+## Pasos para ejecutar el proyecto
 
-In the project directory, you can run:
+### 1. Requisitos previos
+Para ejecutar la aplicación, asegúrese de tener instalados:
+- **Node.js** (versión recomendada: >= 16.x.x)
+- **npm** o **yarn** (administrador de paquetes)
+- **React.js** (incluido con `create-react-app`)
 
-### `npm start`
+### 2. Clonar el repositorio
+Ejecute el siguiente comando en la terminal:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Instalar dependencias
+Ejecute el siguiente comando para instalar las dependencias necesarias:
+npm install
 
-### `npm test`
+Si hay errores de compatibilidad, intente instalar las dependencias manualmente
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### 4. Ejecutar la aplicación
+Para iniciar el servidor de desarrollo, ejecute:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La aplicación estará disponible en `http://localhost:3000/`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Componentes y Arquitectura
 
-### `npm run eject`
+La aplicación está estructurada en componentes reutilizables en React.js. Se utilizaron rutas con `react-router-dom` para manejar la navegación y `react-intl` para la internacionalización.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Componentes Principales
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Componente | Descripción |
+|------------|------------|
+| **App.js** | Configura la navegación y la internacionalización. |
+| **Login.js** | Página de inicio de sesión con validación. |
+| **Home.js** | Página principal con opciones de navegación. |
+| **Menu.js** | Visualiza la lista de productos de los restaurantes. |
+| **Stores.js** | Muestra las tiendas disponibles. |
+| **Cart.js** | Página del carrito de compras. |
+| **messages.js** | Define los textos en diferentes idiomas. |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Librerías Utilizadas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Librería | Uso en el Proyecto | Instalación |
+|------------|------------------|--------------|
+| **react-router-dom** | Manejo de rutas y navegación. | `npm install react-router-dom` |
+| **react-intl** | Soporte para internacionalización. | `npm install react-intl` |
+| **bootstrap** | Estilos y componentes UI. | `npm install bootstrap` |
+| **react-bootstrap** | Componentes pre-diseñados de Bootstrap. | `npm install react-bootstrap` |
 
-## Learn More
+## Proceso de Desarrollo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+El desarrollo de la aplicación se dividió en varias etapas:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Configuración del Entorno**  
+   - Creación del proyecto con `create-react-app`.  
+   - Instalación de librerías necesarias (`react-router-dom`, `react-intl`, `bootstrap`).  
 
-### Code Splitting
+2. **Implementación de Componentes**  
+   - Creación de componentes funcionales reutilizables.  
+   - Configuración de rutas con `react-router-dom`.  
+   - Implementación del sistema de autenticación.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Internacionalización**  
+   - Uso de `react-intl` para permitir cambio de idioma dinámico.  
+   - Implementación de `messages.js` con textos en inglés y español.  
 
-### Analyzing the Bundle Size
+4. **Integración de Datos**  
+   - Consumo de datos desde una API mock en Mockaroo.  
+   - Uso de `fetch` en `useEffect` para obtener productos y tiendas.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. **Optimización y Ajustes Finales**  
+   - Validación de formularios en `Login.js`.  
+   - Implementación de una estructura de diseño con `react-bootstrap`.  
+   - Manejo del estado con `useState` y `useEffect`.  
 
-### Making a Progressive Web App
+## Ejecución Exitosa
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Una vez que la aplicación está en ejecución, los usuarios pueden:
 
-### Advanced Configuration
+- Registrarse e iniciar sesión.
+- Navegar entre `Menú`, `Tiendas` y `Carrito`.
+- Filtrar y visualizar productos disponibles.
+- Agregar productos al carrito y proceder a la compra.
+- Cambiar el idioma de la aplicación entre inglés y español.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Este README proporciona toda la información necesaria para ejecutar y entender la estructura de la aplicación.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
