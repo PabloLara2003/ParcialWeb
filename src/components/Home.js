@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -33,7 +34,9 @@ const Home = () => {
               style={{ width: "80px", cursor: "pointer" }}
               onClick={() => navigate("/menu")}
             />
-            <h4 style={{ color: "white", marginTop: "10px" }}>MENU</h4>
+            <h4 style={{ color: "white", marginTop: "10px" }}>
+              <FormattedMessage id="menu" defaultMessage="MENU" />
+            </h4>
           </Col>
           <Col className="text-center">
             <Image
@@ -42,7 +45,9 @@ const Home = () => {
               style={{ width: "80px", cursor: "pointer" }}
               onClick={() => navigate("/stores")}
             />
-            <h4 style={{ color: "white", marginTop: "10px" }}>STORES</h4>
+            <h4 style={{ color: "white", marginTop: "10px" }}>
+              <FormattedMessage id="stores" defaultMessage="STORES" />
+            </h4>
           </Col>
           <Col className="text-center">
             <Image
@@ -51,7 +56,9 @@ const Home = () => {
               style={{ width: "80px", cursor: "pointer" }}
               onClick={() => navigate("/cart")}
             />
-            <h4 style={{ color: "white", marginTop: "10px" }}>CART</h4>
+            <h4 style={{ color: "white", marginTop: "10px" }}>
+              <FormattedMessage id="cart" defaultMessage="CART" />
+            </h4>
           </Col>
         </Row>
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
+import { FormattedMessage } from "react-intl";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,6 @@ const Cart = () => {
 
   return (
     <Container fluid>
-      {/* Encabezado */}
       <div
         style={{
           backgroundColor: "#0E5C60",
@@ -24,7 +24,7 @@ const Cart = () => {
           fontWeight: "bold",
         }}
       >
-        CART
+        <FormattedMessage id="cart" />
       </div>
 
       {/* Carrusel de imágenes con altura reducida */}
@@ -32,7 +32,7 @@ const Cart = () => {
         style={{
           position: "relative",
           width: "100%",
-          height: "250px", // Altura más corta
+          height: "250px",
           backgroundColor: "#F8F1ED",
           overflow: "hidden",
         }}
@@ -56,8 +56,8 @@ const Cart = () => {
           alt="Banner"
           style={{
             width: "100%",
-            height: "100%", 
-            objectFit: "cover", 
+            height: "100%",
+            objectFit: "cover",
           }}
         />
         <span

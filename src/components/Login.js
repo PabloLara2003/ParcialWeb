@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 const Login = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState("");
@@ -10,7 +11,7 @@ const Login = ({ setIsAuthenticated }) => {
 
   const validateForm = () => {
     if (password.length < 5 || password.length > 8) {
-      setError("Password must be between 5 and 8 characters");
+      setError("error.password"); 
       return false;
     }
     setError("");
@@ -41,7 +42,7 @@ const Login = ({ setIsAuthenticated }) => {
           <h2 style={{ fontWeight: "bold", color: "#173F35" }}>TOO GOOD TO GO</h2>
           <p style={{ color: "#914E38", fontWeight: "600" }}>FOOD WASTING SOLUTION</p>
           <Image
-            src="/food-image.jpg"
+            src="/food-image.avif"
             alt="Food Image"
             style={{
               width: "80%",
@@ -87,7 +88,11 @@ const Login = ({ setIsAuthenticated }) => {
                   padding: "10px 15px",
                 }}
               />
-              {error && <p style={{ color: "red", fontSize: "0.9rem" }}>{error}</p>}
+              {error && (
+                <p style={{ color: "red", fontSize: "0.9rem" }}>
+                  <FormattedMessage id={error} defaultMessage="Password must be between 5 and 8 characters" />
+                </p>
+              )}
             </Form.Group>
 
             <p
@@ -99,7 +104,7 @@ const Login = ({ setIsAuthenticated }) => {
                 marginBottom: "20px",
               }}
             >
-              Forgot Password?
+              <FormattedMessage id="forgotPassword" defaultMessage="Forgot Password?" />
             </p>
 
             <Button
@@ -113,7 +118,7 @@ const Login = ({ setIsAuthenticated }) => {
                 padding: "10px",
               }}
             >
-              Login
+              <FormattedMessage id="login" defaultMessage="Login" />
             </Button>
           </Form>
         </Col>

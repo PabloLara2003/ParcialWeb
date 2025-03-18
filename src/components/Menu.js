@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Importamos useNavigate
+import { useNavigate } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 const Menu = () => {
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate(); // Hook para redirigir
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://my.api.mockaroo.com/menu.json?key=b1a7afc0")
@@ -15,7 +16,6 @@ const Menu = () => {
 
   return (
     <Container fluid>
-      {/* Encabezado */}
       <div
         style={{
           backgroundColor: "#0E5C60",
@@ -26,10 +26,9 @@ const Menu = () => {
           fontWeight: "bold",
         }}
       >
-        MENU
+        <FormattedMessage id="menu" />
       </div>
 
-      {/* Carrusel de imágenes con altura reducida */}
       <div
         style={{
           position: "relative",
@@ -50,7 +49,7 @@ const Menu = () => {
             zIndex: 10,
             color: "black",
           }}
-          onClick={() => navigate("/stores")} 
+          onClick={() => navigate("/stores")}
         >
           {"<"}
         </span>
@@ -74,13 +73,12 @@ const Menu = () => {
             zIndex: 10,
             color: "black",
           }}
-          onClick={() => navigate("/cart")} // Redirige a Cart
+          onClick={() => navigate("/cart")}
         >
           {">"}
         </span>
       </div>
 
-      {/* Tarjetas de productos */}
       <Container className="py-4" style={{ backgroundColor: "#FFF8F3" }}>
         <Row className="justify-content-center">
           {products.map((product, index) => (
